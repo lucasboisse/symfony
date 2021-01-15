@@ -5,19 +5,19 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Entity\Entreprise;
 class ProStagesController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('pro_stages/index.html.twig', [
-            'controller_name' => 'Bienvenue sur la page d\'accueil de Prostages',
-        ]);
+      $repositoryE= $this->getDoctrine()->getRepository(Entreprise::class);
+      $entreprisess = $repositoryE->findall();
+        return $this->render('pro_stages/index.html.twig', ['entreprisess'=>$entreprisess]);
     }
     public function entreprises(): Response
     {
         return $this->render('pro_stages/entreprises.html.twig', [
-            'controller_name' => 'Cette page affichera la liste des entreprises proposant un stage',
+            'controller_name' => 'Cette page affichera la liste des formations de l\'IUT',
         ]);
     }
     public function formations(): Response
