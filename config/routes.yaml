@@ -1,0 +1,12 @@
+pro_stages_accueil:
+    path: /
+    controller: App\Controller\ProStagesController::index
+pro_stages_entreprises:
+    path: /entreprises
+    controller: App\Controller\ProStagesController::entreprises
+pro_stages_formations:
+    path: /formations
+    controller: App\Controller\ProStagesController::formations
+pro_stages_stages:
+    path: /stages/{id}
+    controller: App\Controller\ProStagesController::stages

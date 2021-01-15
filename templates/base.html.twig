@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}ProStages{% endblock %}</title>
+  <meta name="description" content="Source code generated using layoutit.com">
+  <meta name="author" content="LayoutIt!">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- BLOC DES FEUILLES DE STYLE  -->
+  {% block stylesheets %}
+  <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+  {% endblock %}
+</head>
+<body>
+  <div class="container-fluid">
+
+    {% block haut %}
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center">
+          ProStages
+        </h3>
+        <p> <center> <small class="text-muted">Site développé par BOISSE Lucas.</small> </center> </p>
+      </div>
+    </div>
+    {% endblock %}
+
+    {% block Milieu %}
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">nom</th>
+              <th scope="col">activite</th>
+              <th scope="col">adresse</th>
+              <th scope="col">mail</th>
+              <th scope="col">intitule</th>
+              <th scope="col">mission</th>
+              <th scope="col">diplome</th>
+              <th scope="col">description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+          </div>
+        </div>
+        {% endblock %}
+        {% block Bas %}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Navigation
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href={{path( "pro_stages_accueil")}}>Accueil</a>
+                <a class="dropdown-item" href={{path( "pro_stages_entreprises")}}>Entreprise</a>
+                <a class="dropdown-item" href={{path( "pro_stages_formations")}}>Formation</a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        {% endblock %}
+
+      </div>
+
+
+      {% block javascripts %}
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+      {% endblock %}
+
+    </body>
+    </html>
